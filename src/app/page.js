@@ -56,6 +56,7 @@ export default function HomePage() {
           </div>
           <button
             onClick={handleStart}
+            aria-label="Get Started with Nagrik Mitra"
             className="text-blue-700 font-semibold hover:text-orange-500 transition-colors duration-200 active:scale-95 cursor-pointer"
           >
             Get Started
@@ -95,10 +96,11 @@ export default function HomePage() {
               <button
                 onClick={handleStart}
                 id="start-chatting-btn"
+                aria-label="Start chatting with Nagrik Mitra"
                 className="bg-gradient-to-r from-blue-700 to-blue-600 text-white font-bold py-5 px-10 rounded-2xl text-xl pulse-shadow transition-all hover:scale-105 active:scale-95 inline-flex items-center gap-3 cursor-pointer"
               >
                 {isReturning ? `Welcome back, ${name}!` : "Start Chatting"}
-                <span className="material-symbols-outlined">arrow_forward</span>
+                <span className="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
               </button>
             </div>
           ) : (

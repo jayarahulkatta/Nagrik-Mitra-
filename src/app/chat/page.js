@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import DOMPurify from "isomorphic-dompurify";
 
 const WELCOME_MESSAGE = {
   role: "assistant",
@@ -149,7 +150,7 @@ export default function ChatPage() {
             key={i}
             className="ml-4 list-disc text-slate-700"
             dangerouslySetInnerHTML={{
-              __html: formatted.replace(/^[\s•-]+/, ""),
+              __html: DOMPurify.sanitize(formatted.replace(/^[\s•-]+/, "")),
             }}
           />
         );
@@ -161,7 +162,7 @@ export default function ChatPage() {
             key={i}
             className="ml-4 list-decimal text-slate-700"
             dangerouslySetInnerHTML={{
-              __html: formatted.replace(/^\d+\.\s*/, ""),
+              __html: DOMPurify.sanitize(formatted.replace(/^\d+\.\s*/, "")),
             }}
           />
         );
@@ -172,7 +173,7 @@ export default function ChatPage() {
           <p
             key={i}
             className="text-emerald-700 font-medium mt-2"
-            dangerouslySetInnerHTML={{ __html: formatted }}
+            dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(formatted) }}
           />
         );
       }
@@ -183,7 +184,7 @@ export default function ChatPage() {
         <p
           key={i}
           className="text-slate-800"
-          dangerouslySetInnerHTML={{ __html: formatted }}
+          dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(formatted) }}
         />
       );
     });
@@ -197,15 +198,16 @@ export default function ChatPage() {
           <div className="flex items-center gap-3">
             <Link
               href="/"
+              aria-label="Go back to Home"
               className="p-2 hover:bg-slate-100 rounded-full transition-colors active:scale-95"
             >
-              <span className="material-symbols-outlined text-slate-600">
+              <span className="material-symbols-outlined text-slate-600" aria-hidden="true">
                 arrow_back
               </span>
             </Link>
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-lg shadow-sm bg-gradient-to-br from-blue-700 to-blue-500 flex items-center justify-center">
-                <span className="material-symbols-outlined text-white text-sm">
+                <span className="material-symbols-outlined text-white text-sm" aria-hidden="true">
                   shield
                 </span>
               </div>
@@ -217,9 +219,10 @@ export default function ChatPage() {
           <Link
             href="/complaints"
             id="my-complaints-link"
+            aria-label="View My Complaints"
             className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-blue-50 text-blue-700 hover:bg-blue-100 transition-colors text-sm font-semibold active:scale-95"
           >
-            <span className="material-symbols-outlined text-[18px]">
+            <span className="material-symbols-outlined text-[18px]" aria-hidden="true">
               inbox_text
             </span>
             <span className="hidden sm:inline">My Complaints</span>
@@ -275,12 +278,12 @@ export default function ChatPage() {
 
         {/* Typing Indicator */}
         {isLoading && (
-          <div className="flex items-center gap-3 animate-fade-in-up">
+          <div className="flex items-center gap-3 animate-fade-in-up" aria-live="polite">
             <div className="bg-white/60 px-4 py-2 rounded-full border border-slate-100 flex items-center gap-3 shadow-sm">
               <span className="text-xs font-medium text-slate-500 italic">
                 Nagrik Mitra is thinking...
               </span>
-              <div className="flex gap-1">
+              <div className="flex gap-1" aria-hidden="true">
                 <div className="w-1.5 h-1.5 bg-blue-400 rounded-full typing-dot" />
                 <div className="w-1.5 h-1.5 bg-blue-500 rounded-full typing-dot" />
                 <div className="w-1.5 h-1.5 bg-blue-600 rounded-full typing-dot" />
@@ -304,6 +307,7 @@ export default function ChatPage() {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder="Type your message in any language..."
+              aria-label="Chat input field"
               className="w-full pl-4 pr-12 py-3.5 bg-slate-50 border-none rounded-full text-slate-800 placeholder-slate-400 focus:ring-2 focus:ring-blue-500/20 transition-all shadow-inner outline-none"
               disabled={isLoading}
               id="chat-input"
@@ -313,10 +317,12 @@ export default function ChatPage() {
             type="submit"
             disabled={isLoading || !input.trim()}
             id="send-btn"
+            aria-label="Send message"
             className="w-12 h-12 flex items-center justify-center bg-blue-700 text-white rounded-full shadow-lg shadow-blue-700/20 hover:bg-blue-800 transition-transform active:scale-90 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
           >
             <span
               className="material-symbols-outlined"
+              aria-hidden="true"
               style={{ fontVariationSettings: "'FILL' 1" }}
             >
               send

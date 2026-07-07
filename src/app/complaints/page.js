@@ -116,9 +116,10 @@ export default function ComplaintsPage() {
         <div className="flex items-center gap-3">
           <Link
             href="/chat"
+            aria-label="Go back to Chat"
             className="p-2 hover:bg-blue-50 rounded-full transition-colors active:scale-95"
           >
-            <span className="material-symbols-outlined text-blue-800">
+            <span className="material-symbols-outlined text-blue-800" aria-hidden="true">
               arrow_back
             </span>
           </Link>
@@ -254,7 +255,7 @@ export default function ComplaintsPage() {
                     <div
                       className={`flex items-center gap-1.5 ${catColors.bg} ${catColors.text} px-2.5 py-1 rounded-lg border ${catColors.border}`}
                     >
-                      <span className="material-symbols-outlined text-sm">
+                      <span className="material-symbols-outlined text-sm" aria-hidden="true">
                         {catCfg.icon}
                       </span>
                       <span className="text-xs font-semibold">
@@ -291,6 +292,7 @@ export default function ComplaintsPage() {
                     <div className="pt-4 border-t border-slate-50">
                       <button
                         onClick={() => simulateProgress(idx)}
+                        aria-label="Simulate Progress for this complaint"
                         className="w-full py-2.5 px-4 border border-blue-200 text-blue-700 font-semibold rounded-lg text-sm hover:bg-blue-50 transition-colors active:scale-[0.98] cursor-pointer"
                       >
                         Simulate Progress
