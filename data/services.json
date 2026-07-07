@@ -1,0 +1,425 @@
+[
+  {
+    "serviceName": "Aadhaar Card (New / Update)",
+    "description": "Aadhaar is a 12-digit unique identity number issued by UIDAI to residents of India. It serves as proof of identity and address and is required for most government services, bank accounts, and subsidies.",
+    "requiredDocuments": [
+      "Proof of Identity (Passport, PAN Card, Voter ID, or Driving License)",
+      "Proof of Address (Utility bill, Bank passbook, Ration card, or Passport)",
+      "Proof of Date of Birth (Birth certificate, SSLC certificate, or Passport)",
+      "Proof of Relationship (for Head of Family-based address proof): Ration Card, PDS Card"
+    ],
+    "steps": [
+      "Visit the nearest Aadhaar Enrollment/Update Centre or book an appointment at uidai.gov.in",
+      "Carry original documents for verification (photocopies not accepted alone)",
+      "Fill the enrollment/update form at the centre",
+      "Provide biometrics (fingerprints, iris scan) and photograph",
+      "Collect the acknowledgment slip with your Enrollment ID (EID)",
+      "Track status online at uidai.gov.in using the EID",
+      "Aadhaar will be delivered by post; you can also download e-Aadhaar online"
+    ],
+    "whereToApply": "Nearest Aadhaar Enrollment Centre (find on uidai.gov.in) or Common Service Centre (CSC)",
+    "estimatedTime": "15–30 days for new enrollment; 7–15 days for updates",
+    "fees": "Free for new enrollment. Update: ₹50 per update request (biometric or demographic)"
+  },
+  {
+    "serviceName": "Ration Card",
+    "description": "A Ration Card is an official document issued by state governments that entitles holders to purchase subsidized food grains and other essential commodities from Public Distribution System (PDS) shops.",
+    "requiredDocuments": [
+      "Application form (available at Taluk/Tehsil office or state food department website)",
+      "Aadhaar Card of all family members",
+      "Proof of Address (Electricity bill, rental agreement, or property documents)",
+      "Income Certificate or salary slip",
+      "Passport-size photographs of the head of family",
+      "Bank account details",
+      "Gas connection details (if any)"
+    ],
+    "steps": [
+      "Obtain the application form from your local Taluk/Tehsil Supply Office or download from the state PDS portal",
+      "Fill the form with details of all family members",
+      "Attach self-attested copies of required documents",
+      "Submit at the Taluk/Tehsil Supply Office or through the state's online PDS portal",
+      "A field verification may be conducted by a government official",
+      "Collect the Ration Card from the same office once approved, or it will be posted"
+    ],
+    "whereToApply": "Taluk/Tehsil Supply Office or your state's online PDS/Food & Civil Supplies portal",
+    "estimatedTime": "15–45 days depending on the state",
+    "fees": "Typically ₹5 to ₹45 depending on the state (some states issue free)"
+  },
+  {
+    "serviceName": "Birth Certificate",
+    "description": "A Birth Certificate is an official record of a person's birth, issued by the local municipal authority. It is a vital document needed for school admission, passport, Aadhaar, and various other purposes.",
+    "requiredDocuments": [
+      "Hospital discharge slip / birth report from the hospital",
+      "Aadhaar Card of both parents",
+      "Marriage Certificate of parents (if available)",
+      "Proof of Address (any utility bill or Aadhaar)",
+      "Affidavit (if registering after 21 days of birth — late registration)"
+    ],
+    "steps": [
+      "Most hospitals now register births directly — check with your hospital",
+      "If not auto-registered, visit your local Municipal Corporation / Gram Panchayat office",
+      "Fill the birth registration form",
+      "Submit the required documents",
+      "For delayed registration (after 21 days), an affidavit and magistrate order may be needed",
+      "Collect the Birth Certificate from the issuing office or download from your state's CRS portal"
+    ],
+    "whereToApply": "Local Municipal Corporation, Nagar Palika, or Gram Panchayat office; many states offer online registration via crsorgi.gov.in",
+    "estimatedTime": "7–21 days (immediate if within 21 days of birth at hospital)",
+    "fees": "Free if registered within 21 days; ₹10–₹50 for delayed registration (varies by state)"
+  },
+  {
+    "serviceName": "Death Certificate",
+    "description": "A Death Certificate is an official document stating the cause, date, and place of death. It is required for property transfer, insurance claims, pension settlement, and legal matters.",
+    "requiredDocuments": [
+      "Death report from the hospital (if death occurred at hospital)",
+      "Aadhaar Card of the deceased (if available)",
+      "Proof of Identity of the informant/applicant",
+      "Proof of Address of the deceased",
+      "Cremation/Burial certificate (if applicable)",
+      "FIR copy (in case of unnatural death)"
+    ],
+    "steps": [
+      "Hospitals usually initiate death registration — check with the hospital",
+      "If not auto-registered, visit the local Municipal/Panchayat office within 21 days",
+      "Fill the death registration form",
+      "Submit required documents",
+      "For delayed registration, an affidavit and magistrate order may be needed",
+      "Collect the Death Certificate from the issuing office"
+    ],
+    "whereToApply": "Local Municipal Corporation, Nagar Palika, or Gram Panchayat office; online via crsorgi.gov.in in some states",
+    "estimatedTime": "7–15 days",
+    "fees": "Free if registered within 21 days; ₹10–₹50 for delayed registration"
+  },
+  {
+    "serviceName": "Income Certificate",
+    "description": "An Income Certificate certifies the annual income of a person or family. It is needed for scholarships, fee concessions, reservation benefits, subsidized housing, and various government schemes.",
+    "requiredDocuments": [
+      "Application form",
+      "Aadhaar Card",
+      "Ration Card",
+      "Salary slip / Income proof (employer letter, IT returns, or self-declaration)",
+      "Self-declaration affidavit (for self-employed / no formal income proof)",
+      "Passport-size photograph"
+    ],
+    "steps": [
+      "Obtain the application form from the Tehsildar/Taluk office or state e-services portal",
+      "Fill the form and attach required documents",
+      "Submit at the Tehsildar/Revenue office or online via your state's e-District portal",
+      "A revenue official may conduct a field inquiry",
+      "Collect the certificate from the same office or download online"
+    ],
+    "whereToApply": "Tehsildar / Taluk office / MeeSeva / CSC / state e-District portal",
+    "estimatedTime": "7–15 days",
+    "fees": "₹10–₹50 (varies by state; free in some states through e-District)"
+  },
+  {
+    "serviceName": "Caste Certificate",
+    "description": "A Caste Certificate certifies that a person belongs to a particular Scheduled Caste (SC), Scheduled Tribe (ST), or Other Backward Class (OBC). It is required for reservation benefits in education and employment.",
+    "requiredDocuments": [
+      "Application form",
+      "Aadhaar Card",
+      "Ration Card",
+      "Parent's Caste Certificate (if available)",
+      "School Transfer Certificate / Leaving Certificate mentioning caste",
+      "Proof of Address",
+      "Self-declaration affidavit (if no parental certificate)",
+      "Passport-size photograph"
+    ],
+    "steps": [
+      "Obtain the application form from Tehsildar office or state e-services portal",
+      "Fill the form and attach required documents",
+      "Submit at the Tehsildar/Revenue office or online through e-District portal",
+      "A field inquiry will be conducted by the revenue department",
+      "After verification, the certificate is issued",
+      "Collect from the Tehsildar office or download from the e-District portal"
+    ],
+    "whereToApply": "Tehsildar / Revenue / District office / state e-District portal / MeeSeva / CSC",
+    "estimatedTime": "15–30 days",
+    "fees": "₹10–₹50 (varies by state)"
+  },
+  {
+    "serviceName": "Domicile / Residence Certificate",
+    "description": "A Domicile or Residence Certificate proves that a person is a resident of a particular state. It is required for state-level educational admissions, government jobs, and other state-specific benefits.",
+    "requiredDocuments": [
+      "Application form",
+      "Aadhaar Card",
+      "Ration Card",
+      "Proof of residing in the state for the required duration (utility bills, rent agreement, property documents)",
+      "School/College certificates showing education in the state",
+      "Passport-size photograph",
+      "Self-declaration affidavit"
+    ],
+    "steps": [
+      "Obtain the form from the Tehsildar/Revenue office or state e-services portal",
+      "Fill the form with residential history details",
+      "Attach all supporting documents",
+      "Submit at the Tehsildar/Revenue office or online",
+      "A field verification may be done by the revenue department",
+      "Collect the certificate after approval"
+    ],
+    "whereToApply": "Tehsildar / Revenue / District office / state e-District portal",
+    "estimatedTime": "15–30 days",
+    "fees": "₹10–₹50 (varies by state)"
+  },
+  {
+    "serviceName": "Property Tax Payment",
+    "description": "Property Tax is an annual tax levied by the local Municipal Corporation / Panchayat on residential and commercial properties. Timely payment avoids penalties and is required for property-related legal work.",
+    "requiredDocuments": [
+      "Property Tax Identification Number (PTIN) or Property ID / Assessment Number",
+      "Previous tax payment receipts (if available)",
+      "Property ownership documents (for first-time registration)"
+    ],
+    "steps": [
+      "Find your Property Tax ID from previous receipts or by visiting the municipal office",
+      "Visit your Municipal Corporation's website or office",
+      "Enter your Property ID and view the outstanding tax amount",
+      "Pay online via net banking, UPI, or credit/debit card on the municipal portal",
+      "Alternatively, pay in person at the municipal office or authorized collection centres",
+      "Download and save the payment receipt"
+    ],
+    "whereToApply": "Local Municipal Corporation / Nagar Palika website or office; many cities support online payment through their portals",
+    "estimatedTime": "Immediate (online); same day (in person)",
+    "fees": "Varies based on property size, location, type, and municipal rates. Early payment may get 5–10% discount in many cities."
+  },
+  {
+    "serviceName": "Water Connection (New)",
+    "description": "Apply for a new water supply connection from your local water board / municipal authority for your residential or commercial property.",
+    "requiredDocuments": [
+      "Application form",
+      "Proof of property ownership (sale deed, property tax receipt, or allotment letter)",
+      "Aadhaar Card / ID proof",
+      "Building plan approval (for new constructions)",
+      "No Objection Certificate (NOC) from the housing society (if in apartment)",
+      "Passport-size photograph"
+    ],
+    "steps": [
+      "Visit the local Water Board / Municipal Corporation office or their website",
+      "Fill the new water connection application form",
+      "Attach required documents and photographs",
+      "Pay the application fee and connection charges",
+      "A site inspection will be conducted by the water board",
+      "After approval, the connection will be installed",
+      "Collect the consumer number / connection ID"
+    ],
+    "whereToApply": "Local Water Board / Jal Board / Municipal Corporation office or their online portal",
+    "estimatedTime": "15–45 days after inspection and approval",
+    "fees": "₹500–₹5,000+ depending on connection type (domestic/commercial), pipe diameter, and city"
+  },
+  {
+    "serviceName": "Electricity Bill Payment / New Connection",
+    "description": "Pay your electricity bills or apply for a new electricity connection from your state's power distribution company (DISCOM).",
+    "requiredDocuments": [
+      "For bill payment: Consumer number / account number",
+      "For new connection: Application form, Aadhaar Card, Proof of ownership/tenancy, Building plan approval, Passport-size photograph",
+      "Wiring completion certificate from a licensed electrician (for new connection)"
+    ],
+    "steps": [
+      "Bill Payment: Visit your DISCOM's website/app, enter consumer number, pay via UPI/card/net banking",
+      "New Connection: Visit the local DISCOM office or apply online",
+      "Fill the new connection application form",
+      "Submit required documents and pay the application and security deposit fees",
+      "A site inspection will be conducted",
+      "Meter will be installed after approval",
+      "Note your new consumer number for future payments"
+    ],
+    "whereToApply": "State DISCOM office or website (e.g., TSSPDCL, BESCOM, MSEDCL, BSES, UPPCL)",
+    "estimatedTime": "Bill payment: Immediate. New connection: 7–30 days",
+    "fees": "Bill payment: As per consumption. New connection: ₹500–₹5,000+ (varies by state, load requirement, and connection type)"
+  },
+  {
+    "serviceName": "Voter ID Card (New / Update)",
+    "description": "The Voter ID Card (EPIC - Electoral Photo Identity Card) is issued by the Election Commission of India and is required to vote in elections. It also serves as a valid proof of identity and address.",
+    "requiredDocuments": [
+      "Form 6 (for new registration) or Form 8 (for corrections/updates)",
+      "Proof of Age (Birth certificate, School leaving certificate, or Passport)",
+      "Proof of Address (Aadhaar, Utility bill, Bank passbook, or Ration card)",
+      "Passport-size photograph",
+      "Aadhaar Card (optional but recommended for linking)"
+    ],
+    "steps": [
+      "Visit the National Voters' Service Portal (voters.eci.gov.in) or download the Voter Helpline App",
+      "Register/login and fill Form 6 for new registration or Form 8 for updates",
+      "Upload scanned copies of required documents and photograph",
+      "Submit the application online or at the nearest Electoral Registration Office (ERO)",
+      "A Booth Level Officer (BLO) may visit for verification",
+      "After verification, your name is added to the electoral roll",
+      "Download e-EPIC online or collect the physical card from the ERO"
+    ],
+    "whereToApply": "National Voters' Service Portal (voters.eci.gov.in), Voter Helpline App, or nearest Electoral Registration Office",
+    "estimatedTime": "15–30 days",
+    "fees": "Free"
+  },
+  {
+    "serviceName": "PAN Card (New / Update)",
+    "description": "PAN (Permanent Account Number) is a 10-digit alphanumeric identifier issued by the Income Tax Department. It is mandatory for financial transactions, filing income tax returns, and opening bank accounts.",
+    "requiredDocuments": [
+      "Form 49A (for Indian citizens) or Form 49AA (for foreign nationals)",
+      "Proof of Identity (Aadhaar, Voter ID, Passport, or Driving License)",
+      "Proof of Address (Aadhaar, Utility bill, Bank statement, or Passport)",
+      "Proof of Date of Birth (Birth certificate, Matriculation certificate, or Passport)",
+      "Passport-size photograph"
+    ],
+    "steps": [
+      "Visit the NSDL (onlineservices.nsdl.com) or UTIITSL (pan.utiitsl.com) website",
+      "Select 'New PAN' or 'Changes/Corrections in PAN' as applicable",
+      "Fill Form 49A online with personal and address details",
+      "Upload scanned documents and photograph",
+      "Pay the processing fee online",
+      "Submit and note the acknowledgment number",
+      "You can opt for e-PAN (delivered via email) or physical PAN card (delivered by post)",
+      "Track status using the acknowledgment number"
+    ],
+    "whereToApply": "NSDL e-Gov portal (onlineservices.nsdl.com) or UTIITSL portal (pan.utiitsl.com) or nearest PAN centre",
+    "estimatedTime": "15–20 days for physical card; 2–3 days for e-PAN",
+    "fees": "₹107 (for Indian address); ₹1,017 (for foreign address) — inclusive of GST"
+  },
+  {
+    "serviceName": "Passport (New)",
+    "description": "An Indian Passport is issued by the Ministry of External Affairs and is required for international travel. It also serves as a strong proof of identity and citizenship.",
+    "requiredDocuments": [
+      "Aadhaar Card (mandatory for address verification under ePassport)",
+      "PAN Card or Voter ID or Driving License (additional ID proof)",
+      "Birth Certificate or Matriculation Certificate (proof of date of birth)",
+      "Address proof (Aadhaar, Utility bill, Bank statement, or Rent agreement)",
+      "Marriage Certificate (if applicable, for spouse name endorsement)",
+      "Old Passport (if reissue/renewal)"
+    ],
+    "steps": [
+      "Register on the Passport Seva Portal (passportindia.gov.in)",
+      "Fill the online application form and select the type (Fresh/Re-issue, Normal/Tatkal)",
+      "Pay the fee online",
+      "Book an appointment at the nearest Passport Seva Kendra (PSK) or Post Office Passport Seva Kendra (POPSK)",
+      "Visit the PSK on the appointment date with original documents",
+      "Biometrics (photo, fingerprints) will be captured at the PSK",
+      "Police verification will be initiated (may happen before or after passport dispatch)",
+      "Passport will be dispatched by Speed Post after police verification is cleared"
+    ],
+    "whereToApply": "Passport Seva Portal (passportindia.gov.in), nearest PSK, or POPSK",
+    "estimatedTime": "Normal: 15–30 days; Tatkal: 1–7 days (subject to police verification)",
+    "fees": "Normal (36 pages): ₹1,500; Normal (60 pages): ₹2,000; Tatkal: ₹3,500–₹4,000 (additional)"
+  },
+  {
+    "serviceName": "Driving License (New / Renewal)",
+    "description": "A Driving License is issued by the Regional Transport Office (RTO) and is legally required to drive motor vehicles in India. It also serves as a valid proof of identity and address.",
+    "requiredDocuments": [
+      "Application Form (Form 4 for Learner's License, Form 9 for permanent DL)",
+      "Aadhaar Card",
+      "Proof of Address (Aadhaar, Utility bill, or Passport)",
+      "Proof of Age (Birth certificate, SSLC certificate, or Passport)",
+      "Passport-size photographs",
+      "Medical certificate (Form 1A — from a registered medical practitioner)",
+      "Learner's License (must be held for at least 30 days before applying for permanent DL)"
+    ],
+    "steps": [
+      "Visit the Parivahan portal (parivahan.gov.in) or the Sarathi portal of your state",
+      "Apply for a Learner's License first — fill the form, upload documents, pay fee",
+      "Book a slot and appear for the Learner's License test at the RTO (theory test)",
+      "After receiving Learner's License, practice driving for at least 30 days",
+      "Apply for the permanent Driving License on the same portal",
+      "Book a slot for the driving test at the RTO",
+      "Pass the driving test",
+      "DL will be dispatched by post or can be downloaded as a digital DL via DigiLocker/mParivahan"
+    ],
+    "whereToApply": "Parivahan / Sarathi portal (parivahan.gov.in) or nearest RTO office",
+    "estimatedTime": "Learner's License: 7–15 days. Permanent DL: 30 days after LL + 7–15 days processing",
+    "fees": "Learner's License: ₹200–₹500. Permanent DL: ₹400–₹1,000 (varies by state and vehicle class). Renewal: ₹250–₹500"
+  },
+  {
+    "serviceName": "Senior Citizen ID Card",
+    "description": "A Senior Citizen ID Card is issued by local municipal authorities or state social welfare departments to persons aged 60 years and above. It entitles holders to benefits like priority in queues, travel concessions, and access to welfare schemes.",
+    "requiredDocuments": [
+      "Application form (from the Municipal office or Social Welfare department)",
+      "Aadhaar Card",
+      "Age proof (Birth certificate, Passport, Voter ID, or School certificate)",
+      "Proof of Address (Aadhaar, Utility bill, or Ration card)",
+      "Passport-size photographs (2–3)",
+      "Medical fitness certificate (in some states)"
+    ],
+    "steps": [
+      "Visit the local Municipal Corporation office or District Social Welfare office",
+      "Obtain and fill the Senior Citizen ID application form",
+      "Attach the required documents and photographs",
+      "Submit the form at the same office",
+      "After verification, the Senior Citizen ID card will be issued",
+      "Some states offer online application through their Social Welfare portal"
+    ],
+    "whereToApply": "District Social Welfare Office, Municipal Corporation, or state Social Welfare portal",
+    "estimatedTime": "15–30 days",
+    "fees": "Free in most states; ₹10–₹50 in some states"
+  },
+  {
+    "serviceName": "Marriage Certificate",
+    "description": "A Marriage Certificate is a legal document proving the marriage between two persons. It is required for name change after marriage, spouse visa, joint bank accounts, and various legal and immigration purposes.",
+    "requiredDocuments": [
+      "Application form",
+      "Aadhaar Card / ID proof of both spouses",
+      "Proof of Age of both spouses (Birth certificate, SSLC, or Passport)",
+      "Address proof of both spouses",
+      "Wedding invitation card or photographs of the wedding",
+      "Affidavit of marriage (on stamp paper, notarized)",
+      "Two witness ID proofs and passport-size photographs",
+      "Church/Temple/Mosque certificate (if applicable)"
+    ],
+    "steps": [
+      "Visit the local Sub-Registrar office or apply online through your state's registration portal",
+      "Fill the marriage registration form",
+      "Both spouses and witnesses must be present at the Sub-Registrar office on the appointment date",
+      "Submit all required documents and the marriage affidavit",
+      "Pay the registration fee",
+      "The Sub-Registrar verifies documents and records the marriage",
+      "Marriage Certificate is issued — collect from the office or download online"
+    ],
+    "whereToApply": "Local Sub-Registrar / Registrar of Marriages office or state online marriage registration portal",
+    "estimatedTime": "7–30 days (some states issue same day if all documents are in order)",
+    "fees": "₹100–₹500 (varies by state); additional stamp paper costs for affidavit"
+  },
+  {
+    "serviceName": "Pension Scheme Application (State Pension)",
+    "description": "State pension schemes (Old Age Pension, Widow Pension, Disability Pension) provide monthly financial assistance to eligible citizens. Eligibility and amounts vary by state.",
+    "requiredDocuments": [
+      "Application form",
+      "Aadhaar Card",
+      "Age proof (Birth certificate, Voter ID, or School certificate) — must be 60+ for old age pension",
+      "Income Certificate (to prove BPL/low-income status)",
+      "Bank account passbook (account must be Aadhaar-linked)",
+      "BPL Card / Ration Card (if applicable)",
+      "Disability certificate (for disability pension)",
+      "Death certificate of husband (for widow pension)",
+      "Passport-size photographs"
+    ],
+    "steps": [
+      "Visit the District Social Welfare Office or apply online on your state's pension portal",
+      "Fill the pension application form",
+      "Attach all required documents",
+      "Submit at the Social Welfare Office, Tehsildar office, or through CSC",
+      "A field verification may be conducted",
+      "After approval, pension amount is credited monthly to the linked bank account",
+      "Re-verification (life certificate / Jeevan Pramaan) is needed annually"
+    ],
+    "whereToApply": "District Social Welfare Office, Tehsildar office, Common Service Centre, or state pension portal",
+    "estimatedTime": "30–60 days for approval and first disbursement",
+    "fees": "Free"
+  },
+  {
+    "serviceName": "Ayushman Bharat - Pradhan Mantri Jan Arogya Yojana (PMJAY)",
+    "description": "Ayushman Bharat PMJAY provides health insurance coverage of up to ₹5 lakh per family per year for secondary and tertiary hospitalization. It covers over 50 crore beneficiaries from economically weaker sections.",
+    "requiredDocuments": [
+      "Aadhaar Card (mandatory for identity verification)",
+      "Ration Card / SECC (Socio-Economic Caste Census) data — eligibility is auto-determined based on SECC 2011 data",
+      "Any government-issued ID (if Aadhaar not available, some states accept Voter ID, etc.)",
+      "Mobile number"
+    ],
+    "steps": [
+      "Check eligibility at mera.pmjay.gov.in by entering your mobile number or Ration Card number",
+      "If eligible, visit the nearest Ayushman Bharat Kiosk, Common Service Centre (CSC), or empaneled hospital",
+      "Carry your Aadhaar Card and Ration Card for verification",
+      "Your identity will be verified and an Ayushman Card (e-card) will be generated",
+      "The card is family-based — all eligible family members are covered",
+      "At the time of hospitalization, show your Ayushman Card at any empaneled hospital",
+      "Treatment is cashless up to ₹5 lakh per year — no out-of-pocket payment needed"
+    ],
+    "whereToApply": "mera.pmjay.gov.in, nearest CSC, Ayushman Bharat Kiosk at empaneled hospitals, or state health department office",
+    "estimatedTime": "Ayushman Card can be generated same day if documents are in order",
+    "fees": "Completely free — no premium, no enrollment fee, no charges at empaneled hospitals"
+  }
+]
