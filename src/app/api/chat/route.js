@@ -8,6 +8,9 @@ const servicesPath = path.join(process.cwd(), "data", "services.json");
 const servicesData = JSON.parse(fs.readFileSync(servicesPath, "utf-8"));
 const servicesContext = JSON.stringify(servicesData, null, 2);
 
+// In-memory response cache for the session
+const responseCache = new Map();
+
 const SYSTEM_PROMPT = `You are Nagrik Mitra, a friendly, trustworthy AI assistant that helps Indian citizens
 access government services, understand civic processes, and report public issues.
 
@@ -40,7 +43,7 @@ Rules:
 Knowledge base context:
 ${servicesContext}`;
 
-// Retry with exponential backoff for rate limiting
+// Retry with exponential backoff and jitter for rate limiting
 async function retryWithBackoff(fn, maxRetries = 3) {
   for (let i = 0; i < maxRetries; i++) {
     try {
@@ -48,8 +51,9 @@ async function retryWithBackoff(fn, maxRetries = 3) {
     } catch (error) {
       const isRateLimit = error?.status === 429 || error?.message?.includes("429") || error?.message?.includes("Resource has been exhausted");
       if (isRateLimit && i < maxRetries - 1) {
-        const delay = (i + 1) * 5000; // 5s, 10s, 15s
-        console.log(`Rate limited, retrying in ${delay / 1000}s (attempt ${i + 2}/${maxRetries})`);
+        const jitter = Math.floor(Math.random() * 1000); // 0 to 1000ms jitter
+        const delay = Math.pow(2, i) * 1000 + jitter; // (2^attempt * 1000ms) + random jitter
+        console.log(`Rate limited, retrying in ${delay}ms (attempt ${i + 2}/${maxRetries})`);
         await new Promise((resolve) => setTimeout(resolve, delay));
         continue;
       }
@@ -67,6 +71,38 @@ export async function POST(request) {
         { error: "Message is required" },
         { status: 400 }
       );
+    }
+
+    const query = message.toLowerCase().trim();
+
+    // 1. In-memory response cache
+    if (responseCache.has(query)) {
+      return NextResponse.json(responseCache.get(query));
+    }
+
+    // 2. Local knowledge-base shortcut
+    let matchedService = null;
+    for (const service of servicesData) {
+      // Create a clean version of the service name for matching (e.g. "Aadhaar Card")
+      const cleanName = service.serviceName.toLowerCase().split('(')[0].trim();
+      if (query.includes(cleanName)) {
+        matchedService = service;
+        break;
+      }
+    }
+
+    if (matchedService) {
+      const reply = `**${matchedService.serviceName}**\n\n${matchedService.description}\n\n**Required Documents:**\n• ${matchedService.requiredDocuments.join('\n• ')}\n\n**Steps:**\n1. ${matchedService.steps.join('\n2. ')}\n\n**Where to apply:** ${matchedService.whereToApply}\n**Estimated Time:** ${matchedService.estimatedTime}\n**Fees:** ${matchedService.fees}`;
+
+      const parsed = {
+        intent: "service_info",
+        reply: reply,
+        suggestedActions: ["File a complaint", "Ask another question"],
+        complaintData: null
+      };
+      
+      responseCache.set(query, parsed);
+      return NextResponse.json(parsed);
     }
 
     const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
@@ -93,8 +129,8 @@ export async function POST(request) {
     try {
       // Clean potential markdown code fences
       let cleaned = responseText.trim();
-      if (cleaned.startsWith("```")) {
-        cleaned = cleaned.replace(/^```(?:json)?\n?/, "").replace(/\n?```$/, "");
+      if (cleaned.startsWith("\`\`\`")) {
+        cleaned = cleaned.replace(/^\`\`\`(?:json)?\n?/, "").replace(/\n?\`\`\`$/, "");
       }
       parsed = JSON.parse(cleaned);
     } catch {
@@ -107,18 +143,21 @@ export async function POST(request) {
       };
     }
 
+    // Cache the successful Gemini response
+    responseCache.set(query, parsed);
+
     return NextResponse.json(parsed);
   } catch (error) {
     console.error("Chat API error:", error);
+    // 3. Graceful fallback message instead of raw 429
     return NextResponse.json(
       {
         intent: "general",
-        reply: "I'm sorry, I'm having trouble processing your request right now. Please try again in a moment.",
+        reply: "Nagrik Mitra is a little busy right now — please try again in a few seconds.",
         suggestedActions: ["Try again"],
         complaintData: null,
-        error: true,
       },
-      { status: 500 }
+      { status: 200 } // Return 200 so UI degrades gracefully
     );
   }
 }
