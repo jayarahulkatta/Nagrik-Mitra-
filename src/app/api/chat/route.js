@@ -81,12 +81,34 @@ export async function POST(request) {
     }
 
     // 2. Local knowledge-base shortcut
+    const KEYWORDS = {
+      "aadhaar": "Aadhaar Card (New / Update)",
+      "ration": "Ration Card",
+      "birth": "Birth Certificate",
+      "death": "Death Certificate",
+      "income": "Income Certificate",
+      "caste": "Caste Certificate",
+      "domicile": "Domicile / Residence Certificate",
+      "residence": "Domicile / Residence Certificate",
+      "property tax": "Property Tax Payment",
+      "water connection": "Water Connection (New)",
+      "electricity": "Electricity Bill Payment / New Connection",
+      "voter": "Voter ID Card (New / Update)",
+      "pan card": "PAN Card (New / Update)",
+      "passport": "Passport (New)",
+      "driving": "Driving License (New / Renewal)",
+      "license": "Driving License (New / Renewal)",
+      "senior citizen": "Senior Citizen ID Card",
+      "marriage": "Marriage Certificate",
+      "pension": "Pension Scheme Application (State Pension)",
+      "ayushman": "Ayushman Bharat - Pradhan Mantri Jan Arogya Yojana (PMJAY)",
+      "pmjay": "Ayushman Bharat - Pradhan Mantri Jan Arogya Yojana (PMJAY)",
+    };
+
     let matchedService = null;
-    for (const service of servicesData) {
-      // Create a clean version of the service name for matching (e.g. "Aadhaar Card")
-      const cleanName = service.serviceName.toLowerCase().split('(')[0].trim();
-      if (query.includes(cleanName)) {
-        matchedService = service;
+    for (const [key, serviceName] of Object.entries(KEYWORDS)) {
+      if (query.includes(key)) {
+        matchedService = servicesData.find(s => s.serviceName === serviceName);
         break;
       }
     }
@@ -97,12 +119,24 @@ export async function POST(request) {
       const parsed = {
         intent: "service_info",
         reply: reply,
-        suggestedActions: ["File a complaint", "Ask another question"],
+        suggestedActions: ["File a complaint", "Passport", "Driving License"],
         complaintData: null
       };
       
       responseCache.set(query, parsed);
       return NextResponse.json(parsed);
+    }
+
+    // 2b. Local Complaint Shortcut (Bypass Gemini for complaints if quota is dead)
+    if (query.includes("complaint") || query.includes("pothole") || query.includes("garbage") || query.includes("leak") || query.includes("street light") || query.includes("streetlight")) {
+       const parsed = {
+         intent: "file_complaint",
+         reply: "I understand you want to report an issue. I have filed this complaint for you based on your description.",
+         suggestedActions: ["View My Complaints", "Aadhaar Card", "Ration Card"],
+         complaintData: { category: query.includes("garbage") ? "garbage" : query.includes("pothole") ? "pothole" : "other", location: "Not specified", summary: message }
+       };
+       responseCache.set(query, parsed);
+       return NextResponse.json(parsed);
     }
 
     const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
@@ -153,8 +187,8 @@ export async function POST(request) {
     return NextResponse.json(
       {
         intent: "general",
-        reply: "Nagrik Mitra is a little busy right now — please try again in a few seconds.",
-        suggestedActions: ["Try again"],
+        reply: "Nagrik Mitra is a little busy right now due to high traffic. However, I can still instantly help you with specific services! Try asking about one of these:",
+        suggestedActions: ["Aadhaar Card", "Passport", "Ration Card", "File a complaint"],
         complaintData: null,
       },
       { status: 200 } // Return 200 so UI degrades gracefully
